@@ -18,7 +18,7 @@ export default function Section({
     <section id={id} className="scroll-mt-24">
       <header className="mb-8">
         <p className="text-sm text-term-dim">
-          <span className="prompt">tamara@redteam</span>
+          <span className="prompt">tamara@portfolio</span>
           <span className="text-term-faint">:</span>
           <span className="prompt-path">~</span>
           <span className="text-term-faint">$ </span>

@@ -27,11 +27,12 @@ export const profile = {
 };
 
 // Fact box under the portrait. Set href to make a value a link (e.g. your HTB profile URL).
-export const profileCard: { label: string; value: string; href?: string }[] = [
-  { label: "htb", value: "0xAkaRiri", href: "" },
+// wide makes a row span both columns; status shows a pulsing green dot.
+export const profileCard: { label: string; value: string; href?: string; wide?: boolean }[] = [
+  { label: "status", value: "open to opportunities", wide: true },
   { label: "next cert", value: "HTB CPTS" },
-  { label: "school", value: "UST · BS IS · 10-year Thomasian" },
   { label: "location", value: "Manila, PH (UTC+8)" },
+  { label: "school", value: "UST · BS IS · 10-year Thomasian", wide: true },
 ];
 
 export const links = {
@@ -69,8 +70,6 @@ export type Project = {
   description: string;
   tags: string[];
   demo: string;
-  // Text on the demo button when it isn't a live site, e.g. "sample report". Defaults to "live demo".
-  demoLabel?: string;
   source: string;
   accent: string;
   // Screenshot in /public shown on hover and in the details panel, e.g. "/projects/j1spa-dss.png".
@@ -100,9 +99,9 @@ export const projects: Project[] = [
     title: "Second Look",
     summary: "Scam and Phishing Detection App",
     description:
-      "A website and mobile app that checks texts, emails and links for scams and phishing, explains the red flags in plain words, and works in English and Filipino. It spots fake websites copying 170+ brands, and negation-aware detection keeps real bank alerts from being flagged. The API is hardened against SSRF, rate limited and covered by an SQL injection test, and no user messages are ever stored. Community scam reports use a least-privilege PostgreSQL account with row level security. The website is live; the mobile app is in development.",
-    tags: ["React Native", "Expo", "Node.js", "PostgreSQL", "Supabase", "Render", "GitHub Actions"],
-    demo: "https://secondlook.tamara-dev.com",
+      "Mobile app that flags phishing links and scam texts impersonating 170+ brands, in English and Filipino. The public API is hardened against SSRF and abuse with rate limiting, and no user messages are stored. Negation-aware detection keeps real bank alerts from being flagged as scams, backed by automated tests and CI.",
+    tags: ["React Native", "Expo", "Node.js", "Render", "GitHub Actions"],
+    demo: "#",
     source: "https://github.com/riri0821/Second-Look",
     accent: "#ff3b4e",
     preview: "/projects/second-look.jpg",
@@ -113,10 +112,9 @@ export const projects: Project[] = [
     title: "Debrief",
     summary: "Penetration Test Reporting Tool",
     description:
-      "A command-line tool that turns short finding notes into a professional penetration test report, as an editable Word file and a PDF, with a cover page, executive summary, severity counts, scope, methodology, screenshot evidence, retest results and positive observations. It ships with a real assessment of my app Second Look, where I found and fixed a rate-limit bypass (CVSS 5.3) and a false-positive bug, and confirmed the database was not vulnerable to SQL injection.",
+      "A command-line tool that turns short finding notes into a professional penetration test report, as an editable Word file and a PDF, with a cover page, executive summary, severity counts, scope, methodology and retest results. It ships with a real assessment of my app Second Look, where I found and fixed a rate-limit bypass (CVSS 5.3) and a false-positive bug.",
     tags: ["Python", "YAML", "python-docx", "ReportLab", "GitHub Actions"],
-    demo: "https://github.com/riri0821/debrief-pentest-report/blob/main/docs/sample-report.pdf",
-    demoLabel: "sample report",
+    demo: "#",
     source: "https://github.com/riri0821/debrief-pentest-report",
     accent: "#ffb547",
     preview: "/projects/debrief.png",
@@ -167,7 +165,7 @@ export const posts: Post[] = [
     title: "Roblox Clothing Store Founder and Developer",
     dates: "2020 - Present",
     text: "In 2020, I built a Roblox homestore, designed the clothing, and scripted the Robux purchase prompts in Luau. It reached 300,000 Robux in sales and is still selling today.",
-    tags: ["#passive"],
+    tags: [],
     likes: 2048,
     retweets: 128,
   },
@@ -178,14 +176,14 @@ export const bioHighlights = [
   { label: "Stack", text: "PERN (PostgreSQL, Express, React, Node.js), JavaScript, Python" },
   { label: "Education", text: "BS Information Systems, UST (10-year Thomasian)" },
   { label: "Operations", text: "6 Years, Sales Data Analyst to Operations and Business Systems Associate" },
-  { label: "Enrollment", text: "UTokyo Matsuo-Iwasawa Lab, AI Systems and Data Engineering" },
-  { label: "Upskilling", text: "Cybersecurity and Web Vulnerability Assessment (TryHackMe)" },
+  { label: "Enrollment", text: "UTokyo Matsuo-Iwasawa Lab, AI and Data Science" },
+  { label: "Upskilling", text: "Red Teaming paths on TryHackMe and Hack The Box" },
   { label: "Game Dev", text: "Luau and Roblox Studio" },
   { label: "Language", text: "Nihongo Language Training" },
 ];
 
 // Terminal redesign: the "in progress" card at the end of the Arsenal section.
-export const training = ["Cybersecurity fundamentals", "Web vulnerability assessment", "TryHackMe learning paths"];
+export const training = ["Red Teaming path (TryHackMe)", "Red Teaming path (Hack The Box)", "HTB CPTS certification prep"];
 
 export const chatUsers = [
   "lorem_fan", "ipsum99", "dolor.exe", "sit_amet", "consect3tur",

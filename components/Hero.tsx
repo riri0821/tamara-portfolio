@@ -13,7 +13,6 @@ const HELP = [
   "  projects      what I've built",
   "  log           work experience",
   "  arsenal       skills and tools",
-  "  loot          achievements",
   "  contact       send me a message",
   "  github        open my GitHub",
   "  linkedin      open my LinkedIn",
@@ -23,7 +22,7 @@ const HELP = [
 function Prompt() {
   return (
     <span className="select-none">
-      <span className="prompt">tamara@redteam</span>
+      <span className="prompt">tamara@portfolio</span>
       <span className="text-term-faint">:</span>
       <span className="prompt-path">~</span>
       <span className="text-term-faint">$ </span>
@@ -86,10 +85,6 @@ export default function Hero() {
   return (
     <section id="top" className="grid scroll-mt-24 items-center gap-10 pt-6 md:pt-12 lg:grid-cols-[1.25fr_1fr]">
       <div>
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-term-line bg-term-panel px-3 py-1 text-xs text-term-dim">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-term-green" />
-          open to opportunities
-        </p>
         <Typewriter text="Hi, I'm" />
         <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
           {profile.name}
@@ -98,7 +93,7 @@ export default function Hero() {
         <p className="mt-4 text-lg text-term-text">{profile.role}</p>
         <p className="mt-1 text-lg text-term-red">{profile.focus}</p>
 
-        <TermWindow title="tamara@redteam: ~ (bash)" className="mt-8" bodyClassName="p-0">
+        <TermWindow title="tamara@portfolio: ~ (bash)" className="mt-8" bodyClassName="p-0">
           <div
             ref={scrollRef}
             className="h-64 overflow-y-auto p-5 text-[13px] leading-relaxed sm:text-sm"
@@ -224,9 +219,10 @@ function Portrait() {
       </div>
       <dl className="mt-3 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-term-line bg-term-line text-xs">
         {profileCard.map((f) => (
-          <div key={f.label} className="bg-term-panel px-3 py-2">
+          <div key={f.label} className={`bg-term-panel px-3 py-2 ${f.wide ? "col-span-2" : ""}`}>
             <dt className="text-term-faint">{f.label}</dt>
             <dd className="text-term-text">
+              {f.label === "status" && <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-term-green" />}
               {f.href ? (
                 <a href={f.href} target="_blank" rel="noreferrer" className="hover:underline">
                   {f.value} ↗

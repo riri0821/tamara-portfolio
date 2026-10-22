@@ -26,7 +26,7 @@ export default function Projects() {
       </div>
       <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
-          <li key={p.slot} className="group relative">
+          <li key={p.slot} className="group relative h-full">
             {/* corner brackets that light up on hover */}
             {CORNERS.map((c) => (
               <span
@@ -35,8 +35,8 @@ export default function Projects() {
               />
             ))}
 
-            <button type="button" onClick={() => setOpen(p)} className="block w-full text-left outline-none" aria-label={`Open details for ${p.title}`}>
-              <article className="term-window">
+            <button type="button" onClick={() => setOpen(p)} className="block h-full w-full text-left outline-none" aria-label={`Open details for ${p.title}`}>
+              <article className="term-window flex h-full flex-col">
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-term-line bg-term-bg">
                   {p.preview ? (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -51,7 +51,7 @@ export default function Projects() {
                     </div>
                   )}
                 </div>
-                <div className="p-5">
+                <div className="flex-1 p-5">
                   <h3 className="font-display text-xl font-bold text-white">{p.title}</h3>
                   <p className="mt-1 text-sm text-term-dim">{p.summary}</p>
                 </div>
@@ -127,7 +127,7 @@ function ProjectModal({ project: p, onClose }: { project: Project; onClose: () =
             <div className="mt-6 flex flex-wrap gap-3">
               {live(p.demo) && (
                 <a href={p.demo} target="_blank" rel="noreferrer" className="btn btn-red">
-                  {p.demoLabel ?? "live demo"} ↗
+                  live demo ↗
                 </a>
               )}
               {live(p.source) && (

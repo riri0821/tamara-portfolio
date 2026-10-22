@@ -40,7 +40,7 @@ export default function Contact() {
   }
 
   return (
-    <Section id="contact" index="06" title="Contact" command="./contact.sh --interactive">
+    <Section id="contact" index="05" title="Contact" command="./contact.sh --interactive">
       <div className="grid gap-8 lg:grid-cols-[1fr_1.3fr]">
         <div>
           <h3 className="font-display text-3xl font-bold text-white">{contact.heading}</h3>
