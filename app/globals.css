@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-term-bg font-mono text-term-text antialiased;
+  /* faint grid, like a recon map */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+::selection {
+  @apply bg-term-red text-black;
+}
+
+@layer components {
+  /* A terminal window: title bar with three dots and a path */
+  .term-window {
+    @apply overflow-hidden rounded-lg border border-term-line bg-term-panel/90 shadow-[0_0_0_1px_rgba(0,0,0,0.4),0_20px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur;
+  }
+  .term-bar {
+    @apply flex items-center gap-2 border-b border-term-line bg-term-raised py-0 pl-3 text-xs text-term-dim;
+  }
+  .win-btn {
+    @apply flex h-8 w-10 items-center justify-center text-term-faint transition hover:bg-term-line hover:text-term-text;
+  }
+  .prompt {
+    @apply text-term-green;
+  }
+  .prompt-path {
+    @apply text-term-cyan;
+  }
+  .cmd {
+    @apply text-term-text;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded border border-term-line bg-term-raised px-4 py-2 text-sm text-term-text transition hover:border-term-red hover:text-term-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-term-red;
+  }
+  .btn-red {
+    @apply border-term-red bg-term-red text-black hover:bg-transparent hover:text-term-red;
+  }
+  .tag {
+    @apply rounded border border-term-line px-2 py-0.5 text-[11px] text-term-dim;
+  }
+  .field {
+    @apply mt-1 w-full rounded border border-term-line bg-term-bg px-3 py-2 text-sm text-term-text placeholder:text-term-faint focus:border-term-red focus:outline-none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
