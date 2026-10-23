@@ -145,7 +145,7 @@ export default function Hero() {
         </TermWindow>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href={links.resume} download className="btn btn-red">
+          <a href={links.resume} download="Tamara-Valencia-Resume.pdf" className="btn btn-red">
             download resume ↓
           </a>
           <a href={links.github} target="_blank" rel="noreferrer" className="btn">

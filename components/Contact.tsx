@@ -57,7 +57,7 @@ export default function Contact() {
               </a>
             </li>
             <li>
-              <a href={links.resume} download className="text-term-text hover:text-term-red">
+              <a href={links.resume} download="Tamara-Valencia-Resume.pdf" className="text-term-text hover:text-term-red">
                 <span className="text-term-red">→</span> resume.pdf
               </a>
             </li>

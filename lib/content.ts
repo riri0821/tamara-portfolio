@@ -38,7 +38,7 @@ export const profileCard: { label: string; value: string; href?: string; wide?: 
 export const links = {
   github: "https://github.com/riri0821",
   linkedin: "https://www.linkedin.com/in/tamara-valencia01",
-  resume: "#", // e.g. "/resume.pdf" once the file is in /public
+  resume: "/resume.pdf",
   email: "lorem@example.com",
 };
 
@@ -81,13 +81,13 @@ export type Project = {
 export const projects: Project[] = [
   {
     slot: "Data1",
-    file: "J1SPA_DSS.exe",
-    title: "J1SPA-DSS",
+    file: "J1SPA_Analytics.exe",
+    title: "J1SPA Analytics",
     summary: "Scooter Parts Analytics & Decision Support System",
     description:
       "Analytics and decision support web app for J1 Scooter Parts and Accessories. It replaces manual sales and stock tracking with a live owner dashboard, five-model demand forecasting and automatic low-stock, demand-spike and overstock alerts, so the shop knows what to restock before it runs out.",
     tags: ["Next.js", "Supabase", "PostgreSQL", "FastAPI", "Python", "Recharts"],
-    demo: "https://j1spa-dss.vercel.app/login",
+    demo: "https://j1spa.tamara-dev.com/login",
     source: "https://github.com/riri0821/j1spa-dss",
     accent: "#22c55e",
     preview: "/projects/j1spa-dss.jpg",
@@ -100,8 +100,8 @@ export const projects: Project[] = [
     summary: "Scam and Phishing Detection App",
     description:
       "Mobile app that flags phishing links and scam texts impersonating 170+ brands, in English and Filipino. The public API is hardened against SSRF and abuse with rate limiting, and no user messages are stored. Negation-aware detection keeps real bank alerts from being flagged as scams, backed by automated tests and CI.",
-    tags: ["React Native", "Expo", "Node.js", "Render", "GitHub Actions"],
-    demo: "#",
+    tags: ["React Native", "Expo", "Node.js", "Supabase", "Render", "GitHub Actions"],
+    demo: "https://secondlook.tamara-dev.com",
     source: "https://github.com/riri0821/Second-Look",
     accent: "#ff3b4e",
     preview: "/projects/second-look.jpg",
